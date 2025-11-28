@@ -18,7 +18,7 @@
 	},
 	"inRepository": true,
 	"translatorType": 3,
-	"lastUpdated": "2024-03-25 14:51:02"
+	"lastUpdated": "2025-11-28 19:44:26"
 }
 
 /*
@@ -976,7 +976,7 @@ function beginRecord(type, closeChar) {
 					}
 					delete item.backupLocation;
 				}
-				
+
 				if (!item.date) {
 					item.date = dateFieldsToDate(item.year, item.month, item.day);
 				}
@@ -1276,6 +1276,8 @@ function buildCiteKey (item, extraFields, citekeys) {
 		if (citationKey >= 0) return extraFields.splice(citationKey, 1)[0].value;
 	}
 	
+	if (item.itemID) return item.itemID;
+
   	if (item.citationKey) return item.citationKey;
 	
 	var basekey = "";
